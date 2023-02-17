@@ -3,10 +3,11 @@ import css from './header.module.scss';
 import { BiMenuAltRight, BiPhoneCall } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 import { getMenuStyles, headerVariants } from '../../utils/motion';
+import useHeaderShadow from '../../hooks/useHeaderShadow';
 
 const Header = () => {
   const [show, setShow] = useState(false);
-
+  const headerShadow = useHeaderShadow();
   return (
     <motion.div
       initial='hidden'
@@ -14,11 +15,12 @@ const Header = () => {
       variants={headerVariants}
       viewport={{ once: true, amount: 0.25 }}
       className={`paddings ${css.wrapper}`}
+      style={{ boxShadow: headerShadow }}
     >
       <div className={`flexCenter innerWidth ${css.container}`}>
         <div className={css.name}>Vivy</div>
 
-        <ul style={getMenuStyles()} className={`flexCenter ${css.menu}`}>
+        <ul style={getMenuStyles(show)} className={`flexCenter ${css.menu}`}>
           <li>
             <a href=''>Services</a>
           </li>
@@ -37,6 +39,7 @@ const Header = () => {
           </li>
         </ul>
         <div className={css.menuIcon} onClick={() => setShow(!show)}>
+          {console.log(show, 'is it working?')}
           <BiMenuAltRight size={30} />
         </div>
       </div>
