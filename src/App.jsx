@@ -1,6 +1,7 @@
 import Expertise from './component/expertise/expertise';
 import Header from './component/header/header';
 import Hero from './component/hero/hero';
+import People from './component/people/people';
 import Portfolio from './component/portfolio/portfolio';
 import Work from './component/work/work';
 import css from './styles/app.module.scss';
@@ -13,6 +14,7 @@ const App = () => {
       <Expertise />
       <Work />
       <Portfolio />
+      <People />
     </div>
   );
 };
