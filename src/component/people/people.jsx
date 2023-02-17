@@ -13,6 +13,7 @@ const People = () => {
       viewport={{ once: false, amount: 0.25 }}
       className={`paddings ${css.wrapper}`}
     >
+      <a id='people' className='anchor'></a>
       <motion.div
         variants={footerVariants}
         className={`yPaddings innerWidth ${css.container}`}
